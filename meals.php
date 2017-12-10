@@ -1,4 +1,4 @@
-<?php include_once('./layout/header.php') // Top header include, found in layouts folder?>
+<?php include_once('./layout/header.php') // Top header include, found in layouts folder ?>
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-row w3-padding-64">
   <div class="w3-rest w3-container">
@@ -20,22 +20,22 @@
           <div class="w3-container">
 
               <div class="w3-third">
-              <input class="w3-radio" type="radio" name="portionUnits" value="breakfast" required>
+              <input class="w3-radio" type="radio" name="portionUnits" value="g" required>
               <label>Grams (g)</label>
               </div>
 
               <div class="w3-third">
-              <input class="w3-radio" type="radio" name="portionUnits" value="lunch">
+              <input class="w3-radio" type="radio" name="portionUnits" value="oz">
               <label>Ounces (Oz)</label>
               </div>
               
               <div class="w3-third">
-              <input class="w3-radio" type="radio" name="portionUnits" value="lunch">
+              <input class="w3-radio" type="radio" name="portionUnits" value="ml">
               <label>Milliliters (ml)</label>
               </div>
 
           </div>          
-          <p>Use the item's nutrition label to fill out these fields.</p>
+          <p>Use the item's nutrition label to fill out these fields:</p>
           <label class="w3-text-black"><b>Calories</b></label>
           <input class="w3-input w3-border w3-light-grey" name="calories" type="text"
           pattern="[0-9]+" title="This field only accepts numbers." 
@@ -94,8 +94,8 @@
           </form>
 
 
-
-          <form class="w3-container w3-third" action="action_page.php" method="post">
+          <div class="w3-container w3-third">
+          <form action="action_page.php" method="post">
           <h4 class="w3-text-black">Alternatively, you can select a recent meal's information:</h4>
           <?php 
           // There's going to be some code that'll query the database for recent
@@ -136,6 +136,10 @@
           <button class="w3-btn w3-block w3-grey w3-margin-top">Submit</button>
           </div>
           </form>
+
+          <img src="https://www.fresnostate.edu/kremen/teach/images/misc/Community%20Based%20Learning-stacked.png" class="w3-image w3-round" alt="Norway">
+
+          </div>
   </div>
 
 </div>
