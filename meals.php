@@ -13,7 +13,7 @@
           required>
 
           <label class="w3-text-black"><b>Portion</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="calories" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="calories" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." 
           placeholder="How much of this did you consume?" required>
 
@@ -37,28 +37,28 @@
           </div>          
           <p>Use the item's nutrition label to fill out these fields:</p>
           <label class="w3-text-black"><b>Calories</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="calories" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="calories" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." 
           required>
 
           <label class="w3-text-black"><b>Total Fat (g)</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="total fat" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="total fat" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." required>
 
           <label class="w3-text-black"><b>Cholesterol (mg)</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="cholesterol" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="cholesterol" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." required>
 
           <label class="w3-text-black"><b>Sodium (mg)</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="sodium" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="sodium" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." required>
 
           <label class="w3-text-black"><b>Total Carbohydrates (g)</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="total carbohydrates" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="total carbohydrates" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." required>
 
           <label class="w3-text-black"><b>Protein (g)</b></label>
-          <input class="w3-input w3-border w3-light-grey" name="protein" type="text"
+          <input class="w3-input w3-border w3-light-grey" name="protein" type="number"
           pattern="[0-9]+" title="This field only accepts numbers." required>
 
           <label class="w3-text-black"><b>Category:</b></label>
@@ -96,7 +96,7 @@
 
           <div class="w3-container w3-third">
           <form action="action_page.php" method="post">
-          <h4 class="w3-text-black">Alternatively, you can select a recent meal's information:</h4>
+          <h4 class="w3-text-black">Alternatively, you can select a recent meal's information for a quick add:</h4>
           <?php 
           // There's going to be some code that'll query the database for recent
           // meals but these will be placeholders for the time being
@@ -137,7 +137,37 @@
           </div>
           </form>
 
-          <img src="https://www.fresnostate.edu/kremen/teach/images/misc/Community%20Based%20Learning-stacked.png" class="w3-image w3-round" alt="Norway">
+            <div class="w3-container w3-margin-top">
+            
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                            google.charts.load('current', {'packages':['corechart']});
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            function drawChart() {
+
+                                var data = google.visualization.arrayToDataTable([
+                                ['Category', 'Percentage'],
+                                ['Fat',     11],
+                                ['Protein',      2],
+                                ['Carbs',  2],
+                                ['Sodium', 2],
+                                ]);
+
+                                var options = {
+                                title: "Today's Distribution"
+                                };
+
+                                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                                chart.draw(data, options);
+                            }
+                            </script>
+                        
+                            <div id="piechart" style="width: 100%; height: 100%;"></div>
+
+
+            </div>
 
           </div>
   </div>
