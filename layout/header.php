@@ -1,3 +1,5 @@
+<?php session_start();?>
+<?php $_SESSION['from'] = basename($_SERVER['PHP_SELF']);?>
 <!DOCTYPE html>
 <html>
 <title>Personal Fitness Tracker</title>

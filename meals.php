@@ -1,4 +1,4 @@
-<?php include_once('./layout/header.php')?>
+<?php include_once('./layout/header.php') // Top header include, found in layouts folder?>
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-row w3-padding-64">
   <div class="w3-rest w3-container">
@@ -9,11 +9,37 @@
 
           <label class="w3-text-black"><b>Description</b></label>
           <input class="w3-input w3-border w3-light-grey" name="description" type="text"
-          pattern="[A-Za-z0-9\s]+" required>
+          pattern="[A-Za-z0-9\s]+" placeholder="Pepsi, Ground Beef, Baked Chicken..."
+          required>
 
+          <label class="w3-text-black"><b>Portion</b></label>
+          <input class="w3-input w3-border w3-light-grey" name="calories" type="text"
+          pattern="[0-9]+" title="This field only accepts numbers." 
+          placeholder="How much of this did you consume?" required>
+
+          <div class="w3-container">
+
+              <div class="w3-third">
+              <input class="w3-radio" type="radio" name="portionUnits" value="breakfast" required>
+              <label>Grams (g)</label>
+              </div>
+
+              <div class="w3-third">
+              <input class="w3-radio" type="radio" name="portionUnits" value="lunch">
+              <label>Ounces (Oz)</label>
+              </div>
+              
+              <div class="w3-third">
+              <input class="w3-radio" type="radio" name="portionUnits" value="lunch">
+              <label>Milliliters (ml)</label>
+              </div>
+
+          </div>          
+          <p>Use the item's nutrition label to fill out these fields.</p>
           <label class="w3-text-black"><b>Calories</b></label>
           <input class="w3-input w3-border w3-light-grey" name="calories" type="text"
-          pattern="[0-9]+" title="This field only accepts numbers." required>
+          pattern="[0-9]+" title="This field only accepts numbers." 
+          required>
 
           <label class="w3-text-black"><b>Total Fat (g)</b></label>
           <input class="w3-input w3-border w3-light-grey" name="total fat" type="text"
